@@ -17,12 +17,12 @@ typedef struct piece
 }piece;
 
 piece tower;
-piece horse;
+piece knight;
 piece queen;
 piece bispho;
 
 // Global variables
-#define HORSE_MOVE 2
+#define KNIGHT_MOVE 2
 #define MAX_MOVE 7
 char restart;
 
@@ -47,7 +47,7 @@ int main()
         printf("[1] Bispho\n");
         printf("[2] Tower\n");
         printf("[3] Queen\n");
-        printf("[4] Horse\n");
+        printf("[4] Knight\n");
         printf("Which piece you wanto to move? ");
         scanf("%i", &piece);
         
@@ -165,17 +165,17 @@ int main()
                 }
                 break;
             case 4:
-                // Horse
+                // Knight
                 printf("\n");
-                printf("Horses just make L moviments.\n");
+                printf("Knights just make L moviments.\n");
                 printf("[1] Forward-left  (↰)\n");
                 printf("[2] Forward-right (↱)\n");
                 printf("[3] Backward-left (↵)\n");
                 printf("[4] Backward-right(↳)\n");
                 printf("Which moviment do you want to do? ");
-                scanf("%i", &horse.move);
+                scanf("%i", &knight.move);
                 
-                move_l(horse.move);
+                move_l(knight.move);
                 break;
                 
             default:
@@ -277,26 +277,26 @@ void move_l(int x)
     if (x == 1)
     {
         // ↰
-        move_forward(HORSE_MOVE);
-        move_left(HORSE_MOVE - 1);
+        move_forward(KNIGHT_MOVE);
+        move_left(KNIGHT_MOVE - 1);
     }
     if (x == 2)
     {
         // ↱
-        move_forward(HORSE_MOVE);
-        move_right(HORSE_MOVE - 1);
+        move_forward(KNIGHT_MOVE);
+        move_right(KNIGHT_MOVE - 1);
     }
     if (x == 3)
     {   
         // ↵
-        move_backward(HORSE_MOVE);
-        move_left(HORSE_MOVE - 1);
+        move_backward(KNIGHT_MOVE);
+        move_left(KNIGHT_MOVE - 1);
     }
     if (x == 4)
     {
         // ↳
-        move_backward(HORSE_MOVE);
-        move_right(HORSE_MOVE - 1);
+        move_backward(KNIGHT_MOVE);
+        move_right(KNIGHT_MOVE - 1);
     }
 }
 
